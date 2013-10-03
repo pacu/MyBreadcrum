@@ -1,0 +1,613 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7EC53E4917FCD2ED00E45959 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7EC53E4717FCD2ED00E45959 /* Model.xcdatamodeld */; };
+		7EC53E4A17FCD2ED00E45959 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7EC53E4717FCD2ED00E45959 /* Model.xcdatamodeld */; };
+		7EC53E4E17FCE08E00E45959 /* EncryptionTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC53E4D17FCE08E00E45959 /* EncryptionTransformer.m */; };
+		7EC53E4F17FCE08E00E45959 /* EncryptionTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC53E4D17FCE08E00E45959 /* EncryptionTransformer.m */; };
+		7EC53E5117FD0AD800E45959 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC53E5017FD0AD800E45959 /* CoreData.framework */; };
+		7EC53E5417FD182200E45959 /* StringEncryptionTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC53E5317FD182200E45959 /* StringEncryptionTransformer.m */; };
+		7EC53E5517FD182200E45959 /* StringEncryptionTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC53E5317FD182200E45959 /* StringEncryptionTransformer.m */; };
+		7EC53E5817FD18EE00E45959 /* ACImageEncryptionTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC53E5717FD18EE00E45959 /* ACImageEncryptionTransformer.m */; };
+		7EC53E5917FD18EE00E45959 /* ACImageEncryptionTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC53E5717FD18EE00E45959 /* ACImageEncryptionTransformer.m */; };
+		7EC53E5C17FD19A400E45959 /* ACDateEncryptionTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC53E5B17FD19A400E45959 /* ACDateEncryptionTransformer.m */; };
+		7EC53E5D17FD19A400E45959 /* ACDateEncryptionTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC53E5B17FD19A400E45959 /* ACDateEncryptionTransformer.m */; };
+		7ECD2CC217FA2B9B00363D63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECD2CC117FA2B9B00363D63 /* Foundation.framework */; };
+		7ECD2CC417FA2B9B00363D63 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECD2CC317FA2B9B00363D63 /* CoreGraphics.framework */; };
+		7ECD2CC617FA2B9B00363D63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECD2CC517FA2B9B00363D63 /* UIKit.framework */; };
+		7ECD2CCC17FA2B9B00363D63 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7ECD2CCA17FA2B9B00363D63 /* InfoPlist.strings */; };
+		7ECD2CCE17FA2B9B00363D63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECD2CCD17FA2B9B00363D63 /* main.m */; };
+		7ECD2CD217FA2B9B00363D63 /* ACAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECD2CD117FA2B9B00363D63 /* ACAppDelegate.m */; };
+		7ECD2CD517FA2B9B00363D63 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ECD2CD317FA2B9B00363D63 /* Main_iPhone.storyboard */; };
+		7ECD2CD817FA2B9B00363D63 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ECD2CD617FA2B9B00363D63 /* Main_iPad.storyboard */; };
+		7ECD2CDB17FA2B9B00363D63 /* ACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECD2CDA17FA2B9B00363D63 /* ACViewController.m */; };
+		7ECD2CDD17FA2B9B00363D63 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7ECD2CDC17FA2B9B00363D63 /* Images.xcassets */; };
+		7ECD2CE417FA2B9B00363D63 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECD2CE317FA2B9B00363D63 /* XCTest.framework */; };
+		7ECD2CE517FA2B9B00363D63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECD2CC117FA2B9B00363D63 /* Foundation.framework */; };
+		7ECD2CE617FA2B9B00363D63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECD2CC517FA2B9B00363D63 /* UIKit.framework */; };
+		7ECD2CEE17FA2B9B00363D63 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7ECD2CEC17FA2B9B00363D63 /* InfoPlist.strings */; };
+		7ECD2CF017FA2B9B00363D63 /* MyBreadcrumTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECD2CEF17FA2B9B00363D63 /* MyBreadcrumTests.m */; };
+		84876247237142D183A3C5B1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A94CA37A3E4BB79521905B /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7ECD2CE717FA2B9B00363D63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7ECD2CB617FA2B9A00363D63 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7ECD2CBD17FA2B9B00363D63;
+			remoteInfo = MyBreadcrum;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		29A94CA37A3E4BB79521905B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EC53E4817FCD2ED00E45959 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		7EC53E4C17FCE08E00E45959 /* EncryptionTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptionTransformer.h; sourceTree = "<group>"; };
+		7EC53E4D17FCE08E00E45959 /* EncryptionTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptionTransformer.m; sourceTree = "<group>"; };
+		7EC53E5017FD0AD800E45959 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7EC53E5217FD182100E45959 /* StringEncryptionTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringEncryptionTransformer.h; sourceTree = "<group>"; };
+		7EC53E5317FD182200E45959 /* StringEncryptionTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringEncryptionTransformer.m; sourceTree = "<group>"; };
+		7EC53E5617FD18EE00E45959 /* ACImageEncryptionTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACImageEncryptionTransformer.h; sourceTree = "<group>"; };
+		7EC53E5717FD18EE00E45959 /* ACImageEncryptionTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACImageEncryptionTransformer.m; sourceTree = "<group>"; };
+		7EC53E5A17FD19A400E45959 /* ACDateEncryptionTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACDateEncryptionTransformer.h; sourceTree = "<group>"; };
+		7EC53E5B17FD19A400E45959 /* ACDateEncryptionTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACDateEncryptionTransformer.m; sourceTree = "<group>"; };
+		7ECD2CBE17FA2B9B00363D63 /* MyBreadcrum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyBreadcrum.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7ECD2CC117FA2B9B00363D63 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7ECD2CC317FA2B9B00363D63 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7ECD2CC517FA2B9B00363D63 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7ECD2CC917FA2B9B00363D63 /* MyBreadcrum-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyBreadcrum-Info.plist"; sourceTree = "<group>"; };
+		7ECD2CCB17FA2B9B00363D63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7ECD2CCD17FA2B9B00363D63 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7ECD2CCF17FA2B9B00363D63 /* MyBreadcrum-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyBreadcrum-Prefix.pch"; sourceTree = "<group>"; };
+		7ECD2CD017FA2B9B00363D63 /* ACAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACAppDelegate.h; sourceTree = "<group>"; };
+		7ECD2CD117FA2B9B00363D63 /* ACAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACAppDelegate.m; sourceTree = "<group>"; };
+		7ECD2CD417FA2B9B00363D63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		7ECD2CD717FA2B9B00363D63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		7ECD2CD917FA2B9B00363D63 /* ACViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACViewController.h; sourceTree = "<group>"; };
+		7ECD2CDA17FA2B9B00363D63 /* ACViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACViewController.m; sourceTree = "<group>"; };
+		7ECD2CDC17FA2B9B00363D63 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7ECD2CE217FA2B9B00363D63 /* MyBreadcrumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyBreadcrumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7ECD2CE317FA2B9B00363D63 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		7ECD2CEB17FA2B9B00363D63 /* MyBreadcrumTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyBreadcrumTests-Info.plist"; sourceTree = "<group>"; };
+		7ECD2CED17FA2B9B00363D63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7ECD2CEF17FA2B9B00363D63 /* MyBreadcrumTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyBreadcrumTests.m; sourceTree = "<group>"; };
+		9F71E3289CC847E2A1F2964B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7ECD2CBB17FA2B9B00363D63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EC53E5117FD0AD800E45959 /* CoreData.framework in Frameworks */,
+				7ECD2CC417FA2B9B00363D63 /* CoreGraphics.framework in Frameworks */,
+				7ECD2CC617FA2B9B00363D63 /* UIKit.framework in Frameworks */,
+				7ECD2CC217FA2B9B00363D63 /* Foundation.framework in Frameworks */,
+				84876247237142D183A3C5B1 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7ECD2CDF17FA2B9B00363D63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7ECD2CE417FA2B9B00363D63 /* XCTest.framework in Frameworks */,
+				7ECD2CE617FA2B9B00363D63 /* UIKit.framework in Frameworks */,
+				7ECD2CE517FA2B9B00363D63 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7EC53E4617FCD2D700E45959 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				7EC53E4B17FCE05700E45959 /* EncryptionTransformer */,
+				7EC53E4717FCD2ED00E45959 /* Model.xcdatamodeld */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		7EC53E4B17FCE05700E45959 /* EncryptionTransformer */ = {
+			isa = PBXGroup;
+			children = (
+				7EC53E4C17FCE08E00E45959 /* EncryptionTransformer.h */,
+				7EC53E4D17FCE08E00E45959 /* EncryptionTransformer.m */,
+				7EC53E5217FD182100E45959 /* StringEncryptionTransformer.h */,
+				7EC53E5317FD182200E45959 /* StringEncryptionTransformer.m */,
+				7EC53E5617FD18EE00E45959 /* ACImageEncryptionTransformer.h */,
+				7EC53E5717FD18EE00E45959 /* ACImageEncryptionTransformer.m */,
+				7EC53E5A17FD19A400E45959 /* ACDateEncryptionTransformer.h */,
+				7EC53E5B17FD19A400E45959 /* ACDateEncryptionTransformer.m */,
+			);
+			name = EncryptionTransformer;
+			sourceTree = "<group>";
+		};
+		7ECD2CB517FA2B9A00363D63 = {
+			isa = PBXGroup;
+			children = (
+				7ECD2CC717FA2B9B00363D63 /* MyBreadcrum */,
+				7ECD2CE917FA2B9B00363D63 /* MyBreadcrumTests */,
+				7ECD2CC017FA2B9B00363D63 /* Frameworks */,
+				7ECD2CBF17FA2B9B00363D63 /* Products */,
+				9F71E3289CC847E2A1F2964B /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		7ECD2CBF17FA2B9B00363D63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7ECD2CBE17FA2B9B00363D63 /* MyBreadcrum.app */,
+				7ECD2CE217FA2B9B00363D63 /* MyBreadcrumTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7ECD2CC017FA2B9B00363D63 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7EC53E5017FD0AD800E45959 /* CoreData.framework */,
+				7ECD2CC117FA2B9B00363D63 /* Foundation.framework */,
+				7ECD2CC317FA2B9B00363D63 /* CoreGraphics.framework */,
+				7ECD2CC517FA2B9B00363D63 /* UIKit.framework */,
+				7ECD2CE317FA2B9B00363D63 /* XCTest.framework */,
+				29A94CA37A3E4BB79521905B /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7ECD2CC717FA2B9B00363D63 /* MyBreadcrum */ = {
+			isa = PBXGroup;
+			children = (
+				7EC53E4617FCD2D700E45959 /* model */,
+				7ECD2CD017FA2B9B00363D63 /* ACAppDelegate.h */,
+				7ECD2CD117FA2B9B00363D63 /* ACAppDelegate.m */,
+				7ECD2CD317FA2B9B00363D63 /* Main_iPhone.storyboard */,
+				7ECD2CD617FA2B9B00363D63 /* Main_iPad.storyboard */,
+				7ECD2CD917FA2B9B00363D63 /* ACViewController.h */,
+				7ECD2CDA17FA2B9B00363D63 /* ACViewController.m */,
+				7ECD2CDC17FA2B9B00363D63 /* Images.xcassets */,
+				7ECD2CC817FA2B9B00363D63 /* Supporting Files */,
+			);
+			path = MyBreadcrum;
+			sourceTree = "<group>";
+		};
+		7ECD2CC817FA2B9B00363D63 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7ECD2CC917FA2B9B00363D63 /* MyBreadcrum-Info.plist */,
+				7ECD2CCA17FA2B9B00363D63 /* InfoPlist.strings */,
+				7ECD2CCD17FA2B9B00363D63 /* main.m */,
+				7ECD2CCF17FA2B9B00363D63 /* MyBreadcrum-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7ECD2CE917FA2B9B00363D63 /* MyBreadcrumTests */ = {
+			isa = PBXGroup;
+			children = (
+				7ECD2CEF17FA2B9B00363D63 /* MyBreadcrumTests.m */,
+				7ECD2CEA17FA2B9B00363D63 /* Supporting Files */,
+			);
+			path = MyBreadcrumTests;
+			sourceTree = "<group>";
+		};
+		7ECD2CEA17FA2B9B00363D63 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7ECD2CEB17FA2B9B00363D63 /* MyBreadcrumTests-Info.plist */,
+				7ECD2CEC17FA2B9B00363D63 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7ECD2CBD17FA2B9B00363D63 /* MyBreadcrum */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7ECD2CF317FA2B9B00363D63 /* Build configuration list for PBXNativeTarget "MyBreadcrum" */;
+			buildPhases = (
+				B30B1C2CFB384B87AF122FB2 /* Check Pods Manifest.lock */,
+				7ECD2CBA17FA2B9B00363D63 /* Sources */,
+				7ECD2CBB17FA2B9B00363D63 /* Frameworks */,
+				7ECD2CBC17FA2B9B00363D63 /* Resources */,
+				9F7340F7054441D5B11ED01F /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyBreadcrum;
+			productName = MyBreadcrum;
+			productReference = 7ECD2CBE17FA2B9B00363D63 /* MyBreadcrum.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7ECD2CE117FA2B9B00363D63 /* MyBreadcrumTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7ECD2CF617FA2B9B00363D63 /* Build configuration list for PBXNativeTarget "MyBreadcrumTests" */;
+			buildPhases = (
+				7ECD2CDE17FA2B9B00363D63 /* Sources */,
+				7ECD2CDF17FA2B9B00363D63 /* Frameworks */,
+				7ECD2CE017FA2B9B00363D63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7ECD2CE817FA2B9B00363D63 /* PBXTargetDependency */,
+			);
+			name = MyBreadcrumTests;
+			productName = MyBreadcrumTests;
+			productReference = 7ECD2CE217FA2B9B00363D63 /* MyBreadcrumTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7ECD2CB617FA2B9A00363D63 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = AC;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = AppCrafter;
+				TargetAttributes = {
+					7ECD2CBD17FA2B9B00363D63 = {
+						DevelopmentTeam = H2Y8T4U9F2;
+					};
+					7ECD2CE117FA2B9B00363D63 = {
+						TestTargetID = 7ECD2CBD17FA2B9B00363D63;
+					};
+				};
+			};
+			buildConfigurationList = 7ECD2CB917FA2B9A00363D63 /* Build configuration list for PBXProject "MyBreadcrum" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7ECD2CB517FA2B9A00363D63;
+			productRefGroup = 7ECD2CBF17FA2B9B00363D63 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7ECD2CBD17FA2B9B00363D63 /* MyBreadcrum */,
+				7ECD2CE117FA2B9B00363D63 /* MyBreadcrumTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7ECD2CBC17FA2B9B00363D63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7ECD2CD817FA2B9B00363D63 /* Main_iPad.storyboard in Resources */,
+				7ECD2CDD17FA2B9B00363D63 /* Images.xcassets in Resources */,
+				7ECD2CD517FA2B9B00363D63 /* Main_iPhone.storyboard in Resources */,
+				7ECD2CCC17FA2B9B00363D63 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7ECD2CE017FA2B9B00363D63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7ECD2CEE17FA2B9B00363D63 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9F7340F7054441D5B11ED01F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B30B1C2CFB384B87AF122FB2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7ECD2CBA17FA2B9B00363D63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EC53E5C17FD19A400E45959 /* ACDateEncryptionTransformer.m in Sources */,
+				7EC53E4E17FCE08E00E45959 /* EncryptionTransformer.m in Sources */,
+				7ECD2CD217FA2B9B00363D63 /* ACAppDelegate.m in Sources */,
+				7EC53E5817FD18EE00E45959 /* ACImageEncryptionTransformer.m in Sources */,
+				7ECD2CDB17FA2B9B00363D63 /* ACViewController.m in Sources */,
+				7EC53E5417FD182200E45959 /* StringEncryptionTransformer.m in Sources */,
+				7ECD2CCE17FA2B9B00363D63 /* main.m in Sources */,
+				7EC53E4917FCD2ED00E45959 /* Model.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7ECD2CDE17FA2B9B00363D63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EC53E5917FD18EE00E45959 /* ACImageEncryptionTransformer.m in Sources */,
+				7ECD2CF017FA2B9B00363D63 /* MyBreadcrumTests.m in Sources */,
+				7EC53E5D17FD19A400E45959 /* ACDateEncryptionTransformer.m in Sources */,
+				7EC53E5517FD182200E45959 /* StringEncryptionTransformer.m in Sources */,
+				7EC53E4A17FCD2ED00E45959 /* Model.xcdatamodeld in Sources */,
+				7EC53E4F17FCE08E00E45959 /* EncryptionTransformer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7ECD2CE817FA2B9B00363D63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7ECD2CBD17FA2B9B00363D63 /* MyBreadcrum */;
+			targetProxy = 7ECD2CE717FA2B9B00363D63 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7ECD2CCA17FA2B9B00363D63 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7ECD2CCB17FA2B9B00363D63 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7ECD2CD317FA2B9B00363D63 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7ECD2CD417FA2B9B00363D63 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		7ECD2CD617FA2B9B00363D63 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7ECD2CD717FA2B9B00363D63 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		7ECD2CEC17FA2B9B00363D63 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7ECD2CED17FA2B9B00363D63 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7ECD2CF117FA2B9B00363D63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7ECD2CF217FA2B9B00363D63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7ECD2CF417FA2B9B00363D63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F71E3289CC847E2A1F2964B /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MyBreadcrum/MyBreadcrum-Prefix.pch";
+				INFOPLIST_FILE = "MyBreadcrum/MyBreadcrum-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7ECD2CF517FA2B9B00363D63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F71E3289CC847E2A1F2964B /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MyBreadcrum/MyBreadcrum-Prefix.pch";
+				INFOPLIST_FILE = "MyBreadcrum/MyBreadcrum-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		7ECD2CF717FA2B9B00363D63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MyBreadcrum.app/MyBreadcrum";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MyBreadcrum/MyBreadcrum-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MyBreadcrumTests/MyBreadcrumTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		7ECD2CF817FA2B9B00363D63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MyBreadcrum.app/MyBreadcrum";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MyBreadcrum/MyBreadcrum-Prefix.pch";
+				INFOPLIST_FILE = "MyBreadcrumTests/MyBreadcrumTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7ECD2CB917FA2B9A00363D63 /* Build configuration list for PBXProject "MyBreadcrum" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7ECD2CF117FA2B9B00363D63 /* Debug */,
+				7ECD2CF217FA2B9B00363D63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7ECD2CF317FA2B9B00363D63 /* Build configuration list for PBXNativeTarget "MyBreadcrum" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7ECD2CF417FA2B9B00363D63 /* Debug */,
+				7ECD2CF517FA2B9B00363D63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7ECD2CF617FA2B9B00363D63 /* Build configuration list for PBXNativeTarget "MyBreadcrumTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7ECD2CF717FA2B9B00363D63 /* Debug */,
+				7ECD2CF817FA2B9B00363D63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7EC53E4717FCD2ED00E45959 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7EC53E4817FCD2ED00E45959 /* Model.xcdatamodel */,
+			);
+			currentVersion = 7EC53E4817FCD2ED00E45959 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 7ECD2CB617FA2B9A00363D63 /* Project object */;
+}
