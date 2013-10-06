@@ -1,33 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="12F37" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Breadcrum" syncable="YES">
-        <attribute name="attribute" optional="YES" syncable="YES"/>
-        <attribute name="date" optional="YES" syncable="YES"/>
-        <attribute name="notes" optional="YES" syncable="YES"/>
-        <attribute name="thumb" optional="YES" syncable="YES"/>
-        <attribute name="title" optional="YES" syncable="YES"/>
-        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" syncable="YES"/>
+    <entity name="Breadcrum" representedClassName="Breadcrum" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Transformable" valueTransformerName="ACDateEncryptionTransformer" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="Transformable" valueTransformerName="StringEncryptionTransformer" syncable="YES"/>
+        <attribute name="thumb" optional="YES" attributeType="Transformable" valueTransformerName="ACImageEncryptionTransformer" storedInTruthFile="YES" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="Transformable" valueTransformerName="StringEncryptionTransformer" syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="breadcrum" inverseEntity="Location" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="breadcrum" inverseEntity="User" syncable="YES"/>
     </entity>
-    <entity name="Location" syncable="YES">
-        <attribute name="address" optional="YES" syncable="YES"/>
-        <attribute name="attribute" optional="YES" syncable="YES"/>
-        <attribute name="attribute1" optional="YES" syncable="YES"/>
-        <attribute name="attribute2" optional="YES" syncable="YES"/>
-        <attribute name="attribute3" optional="YES" syncable="YES"/>
-        <attribute name="attribute4" optional="YES" syncable="YES"/>
-        <attribute name="latitude" optional="YES" syncable="YES"/>
-        <attribute name="longitude" optional="YES" syncable="YES"/>
-        <attribute name="name" optional="YES" syncable="YES"/>
-        <attribute name="notes" optional="YES" syncable="YES"/>
+    <entity name="Location" representedClassName="Location" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="Transformable" valueTransformerName="StringEncryptionTransformer" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Transformable" valueTransformerName="ACNumberEncryptionTransformer" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Transformable" valueTransformerName="ACNumberEncryptionTransformer" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="Transformable" valueTransformerName="StringEncryptionTransformer" syncable="YES"/>
+        <relationship name="breadcrum" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Breadcrum" inverseName="location" inverseEntity="Breadcrum" syncable="YES"/>
     </entity>
-    <entity name="User" syncable="YES">
-        <attribute name="name" optional="YES" syncable="YES"/>
-        <attribute name="password" optional="YES" syncable="YES"/>
-        <attribute name="username" optional="YES" syncable="YES"/>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="password" optional="YES" attributeType="Transformable" valueTransformerName="StringEncryptionTransformer" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="Transformable" valueTransformerName="StringEncryptionTransformer" syncable="YES"/>
+        <relationship name="breadcrum" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Breadcrum" inverseName="user" inverseEntity="Breadcrum" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Location" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Breadcrum" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Location" positionX="0" positionY="0" width="0" height="0"/>
         <element name="User" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

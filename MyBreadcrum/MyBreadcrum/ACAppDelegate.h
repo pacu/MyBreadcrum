@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
-
+#define APP_DELEGATE (ACAppDelegate*)[[UIApplication sharedApplication] delegate]
 @interface ACAppDelegate : UIResponder <UIApplicationDelegate>{
 @private
-    NSManagedObjectContext          *managedObjectContext_;
-    NSManagedObjectModel            *managedObjectModel_;
-    NSPersistentStoreCoordinator    *persistentStoreCoordinator_;
+    NSManagedObjectContext          *_managedObjectContext;
+    NSManagedObjectModel            *_managedObjectModel;
+    NSPersistentStoreCoordinator    *_persistentStoreCoordinator;
 }
 
 @property (strong, nonatomic) UIWindow *window;

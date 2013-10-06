@@ -1,5 +1,5 @@
 //
-//  ACDateEncryptionTransformer.h
+//  ACNumberEncryptionTransformer.h
 //  MyBreadcrum
 //
 //  Created by Francisco Gindre on 10/3/13.
@@ -8,6 +8,6 @@
 
 #import "ACArchivableTypeTransformer.h"
 
-@interface ACDateEncryptionTransformer : ACArchivableTypeTransformer
+@interface ACNumberEncryptionTransformer : ACArchivableTypeTransformer
 
 @end

@@ -9,7 +9,9 @@
 #import "ACAppDelegate.h"
 
 @implementation ACAppDelegate
-
+@synthesize persistentStoreCoordinator =_persistentStoreCoordinator;
+@synthesize managedObjectContext = _managedObjectContext;
+@synthesize managedObjectModel = _managedObjectModel;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
@@ -56,16 +58,16 @@
  */
 - (NSManagedObjectContext *)managedObjectContext {
     
-    if (managedObjectContext_ != nil) {
-        return managedObjectContext_;
+    if (_managedObjectContext != nil) {
+        return _managedObjectContext;
     }
     
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
     if (coordinator != nil) {
-        managedObjectContext_ = [[NSManagedObjectContext alloc] init];
-        [managedObjectContext_ setPersistentStoreCoordinator:coordinator];
+        _managedObjectContext = [[NSManagedObjectContext alloc] init];
+        [_managedObjectContext setPersistentStoreCoordinator:coordinator];
     }
-    return managedObjectContext_;
+    return _managedObjectContext;
 }
 
 
@@ -75,13 +77,13 @@
  */
 - (NSManagedObjectModel *)managedObjectModel {
     
-    if (managedObjectModel_ != nil) {
-        return managedObjectModel_;
+    if (_managedObjectModel != nil) {
+        return _managedObjectModel;
     }
 	
-	managedObjectModel_ = [NSManagedObjectModel mergedModelFromBundles:nil] ;
+	_managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil] ;
     
-    return managedObjectModel_;
+    return _managedObjectModel;
 }
 
 
@@ -91,15 +93,15 @@
  */
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
     
-    if (persistentStoreCoordinator_ != nil) {
-        return persistentStoreCoordinator_;
+    if (_persistentStoreCoordinator != nil) {
+        return _persistentStoreCoordinator;
     }
     
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"app.sqlite"];
     
     NSError *error = nil;
-    persistentStoreCoordinator_ = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    if (![persistentStoreCoordinator_ addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
         /*
          Replace this implementation with code to handle the error appropriately.
          
@@ -127,7 +129,7 @@
         abort();
     }
     
-    return persistentStoreCoordinator_;
+    return _persistentStoreCoordinator;
 }
 #pragma mark -
 #pragma convenience methods
@@ -135,7 +137,7 @@
 -(BOOL)saveContext{
     NSError *error =nil;
     
-    BOOL result = [managedObjectContext_ save:&error];
+    BOOL result = [_managedObjectContext save:&error];
 #if DEBUG
     if (error)
         NSLog(@"Error: %@",error);

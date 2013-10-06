@@ -14,21 +14,10 @@
     return [NSDate class];
 }
 
-- (id)transformedValue:(NSDate*)date
-{
-    NSData* data = [NSKeyedArchiver archivedDataWithRootObject:date ];
-    return [super transformedValue:data];
+-(id)transformedValue:(NSDate*)value{
+    return [super transformedValue:value];
 }
-
-- (id)reverseTransformedValue:(NSData*)data
-{
-    if (data == nil)
-    {
-        return nil;
-    }
-    
-    data = [super reverseTransformedValue:data];
-    
-    return [NSKeyedUnarchiver unarchiveObjectWithData:data];
+-(NSDate*)reverseTransformedValue:(NSData*)value{
+    return [super reverseTransformedValue:value];
 }
 @end

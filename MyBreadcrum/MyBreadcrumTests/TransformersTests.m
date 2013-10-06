@@ -7,6 +7,9 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "ACDateEncryptionTransformer.h"
+#import "ACImageEncryptionTransformer.h"
+#import "StringEncryptionTransformer.h"
 
 @interface TransformersTests : XCTestCase
 
@@ -26,9 +29,21 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+-(void)testDateEncryption{
+    ACDateEncryptionTransformer * cryptor = [[ACDateEncryptionTransformer alloc]init];
+    NSDate *expectedDate = [NSDate date];
+    
+    NSData *encryptedDate =[cryptor transformedValue:expectedDate];
+    XCTAssertNotEqual(encryptedDate, expectedDate, @"this should not be the same");
+    XCTAssertNotNil(encryptedDate, @"encryptedDate can't be nil" );
+    
+    NSDate *decryptedDate = [cryptor reverseTransformedValue:encryptedDate];
+    XCTAssertNotNil(decryptedDate, @"decrypted data should not be nil");
+    XCTAssertNotEqualObjects(encryptedDate, decryptedDate, @"decrypted date and encrypted data should not be the same");
+    XCTAssertTrue([decryptedDate isEqualToDate:expectedDate], @"decrypted data is not what was expected");
+    
+    
 }
+
 
 @end
