@@ -8,10 +8,24 @@
 
 #import <UIKit/UIKit.h>
 #import "CreateUserViewController.h"
-@interface LoginViewController : UIViewController <CreateUserDelegate>
+#import "ACBaseFormViewController.h"
+
+#import <CoreData/CoreData.h>
+typedef NS_ENUM(NSInteger, MBLoginViewTextField){
+        MBLoginViewTextFieldUser = 1,
+        MBLoginViewTextFieldPassword,
+        MBLoginViewTextFieldCount
+};
+@interface LoginViewController : ACBaseFormViewController <CreateUserDelegate> {
+    @private
+    __strong NSFetchedResultsController  *_fetchedUsers;
+    
+    
+}
 
 
 @property (nonatomic,strong) IBOutlet UILabel       *errorLabel;
+@property (nonatomic,strong) IBOutlet UILabel       *successLabel;
 @property (nonatomic,strong) IBOutlet UITextField   *userField;
 @property (nonatomic,strong) IBOutlet UITextField   *passwordField;
 @property (nonatomic,strong) IBOutlet UIButton      *loginButton;

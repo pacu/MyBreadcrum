@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ACBaseFormViewController.h"
 @protocol CreateUserDelegate;
 
 
@@ -18,10 +19,10 @@ typedef NS_ENUM(NSInteger, MBCreateUserField) {
     
 };
 
-@interface CreateUserViewController : UIViewController <UITextFieldDelegate> {
+@interface CreateUserViewController : ACBaseFormViewController  {
 
-    UITextField     *_activeTextField;
-    CGRect          _lastKeyboardFrame;
+
+
 }
 @property (nonatomic,strong) IBOutlet UILabel                   *errorLabel;
 @property (nonatomic,strong) IBOutlet UITextField               *userField;

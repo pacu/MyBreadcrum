@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "User.h"
 @interface MyBreadcrumsViewController : UIViewController
 
 
 @property (nonatomic,strong)    IBOutlet UICollectionView *collectionView;
-
+@property (nonatomic,strong)             User             *user;
 @end

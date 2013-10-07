@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "User.h"
+
 #define APP_DELEGATE (ACAppDelegate*)[[UIApplication sharedApplication] delegate]
+
 @interface ACAppDelegate : UIResponder <UIApplicationDelegate>{
 @private
     NSManagedObjectContext          *_managedObjectContext;
@@ -16,8 +19,8 @@
     NSPersistentStoreCoordinator    *_persistentStoreCoordinator;
 }
 
-@property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) UIWindow  *window;
+@property (strong, nonatomic) User      *currentUser;
 
 
 
