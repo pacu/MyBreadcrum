@@ -8,8 +8,20 @@
 
 #import <UIKit/UIKit.h>
 @protocol CreateUserDelegate;
-@interface CreateUserViewController : UIViewController {
-    NSArray *_userList;
+
+
+typedef NS_ENUM(NSInteger, MBCreateUserField) {
+    MBCreateUserFieldUser       =1,
+    MBCreateUserFieldPassword   =2,
+    MBCreateUserFieldConfirm    =3,
+    MBCreateUserFieldCount
+    
+};
+
+@interface CreateUserViewController : UIViewController <UITextFieldDelegate> {
+
+    UITextField     *_activeTextField;
+    CGRect          _lastKeyboardFrame;
 }
 @property (nonatomic,strong) IBOutlet UILabel                   *errorLabel;
 @property (nonatomic,strong) IBOutlet UITextField               *userField;

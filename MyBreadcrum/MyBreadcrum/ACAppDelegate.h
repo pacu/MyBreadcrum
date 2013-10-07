@@ -28,4 +28,5 @@
 -(NSURL *)applicationDocumentsDirectory;
 
 -(NSString*)encryptionKey;
+-(BOOL)saveContext;
 @end
