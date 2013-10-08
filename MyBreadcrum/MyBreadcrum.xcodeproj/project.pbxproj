@@ -69,8 +69,8 @@
 		7EDA2D0B1801E96A00422C90 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDA2D091801E96A00422C90 /* EditProfileViewController.m */; };
 		7EDA2D0E1801FF1200422C90 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDA2D0D1801FF1200422C90 /* User.m */; };
 		7EDA2D0F1801FF1200422C90 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDA2D0D1801FF1200422C90 /* User.m */; };
-		7EDA2D121801FF1300422C90 /* Breadcrum.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDA2D111801FF1300422C90 /* Breadcrum.m */; };
-		7EDA2D131801FF1300422C90 /* Breadcrum.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDA2D111801FF1300422C90 /* Breadcrum.m */; };
+		7EDA2D121801FF1300422C90 /* Breadcrumb.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDA2D111801FF1300422C90 /* Breadcrumb.m */; };
+		7EDA2D131801FF1300422C90 /* Breadcrumb.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDA2D111801FF1300422C90 /* Breadcrumb.m */; };
 		7EDA2D161801FF1300422C90 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDA2D151801FF1300422C90 /* Location.m */; };
 		7EDA2D171801FF1300422C90 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDA2D151801FF1300422C90 /* Location.m */; };
 		7EDA2D201802575B00422C90 /* ACBaseFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDA2D1F1802575B00422C90 /* ACBaseFormViewController.m */; };
@@ -154,8 +154,8 @@
 		7EDA2D091801E96A00422C90 /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
 		7EDA2D0C1801FF1200422C90 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		7EDA2D0D1801FF1200422C90 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		7EDA2D101801FF1300422C90 /* Breadcrum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Breadcrum.h; sourceTree = "<group>"; };
-		7EDA2D111801FF1300422C90 /* Breadcrum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Breadcrum.m; sourceTree = "<group>"; };
+		7EDA2D101801FF1300422C90 /* Breadcrumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Breadcrumb.h; sourceTree = "<group>"; };
+		7EDA2D111801FF1300422C90 /* Breadcrumb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Breadcrumb.m; sourceTree = "<group>"; };
 		7EDA2D141801FF1300422C90 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		7EDA2D151801FF1300422C90 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		7EDA2D1E1802575B00422C90 /* ACBaseFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACBaseFormViewController.h; sourceTree = "<group>"; };
@@ -217,8 +217,8 @@
 				7EC53E4717FCD2ED00E45959 /* Model.xcdatamodeld */,
 				7EDA2D141801FF1300422C90 /* Location.h */,
 				7EDA2D151801FF1300422C90 /* Location.m */,
-				7EDA2D101801FF1300422C90 /* Breadcrum.h */,
-				7EDA2D111801FF1300422C90 /* Breadcrum.m */,
+				7EDA2D101801FF1300422C90 /* Breadcrumb.h */,
+				7EDA2D111801FF1300422C90 /* Breadcrumb.m */,
 				7EDA2D0C1801FF1200422C90 /* User.h */,
 				7EDA2D0D1801FF1200422C90 /* User.m */,
 			);
@@ -487,7 +487,7 @@
 				7ECD2CCE17FA2B9B00363D63 /* main.m in Sources */,
 				7EDA2CF51801D9F900422C90 /* MyBreadcrumsViewController.m in Sources */,
 				7EDA2D161801FF1300422C90 /* Location.m in Sources */,
-				7EDA2D121801FF1300422C90 /* Breadcrum.m in Sources */,
+				7EDA2D121801FF1300422C90 /* Breadcrumb.m in Sources */,
 				7EDA2CEB1801CD6000422C90 /* RNEncryptor.m in Sources */,
 				7EDA2D0A1801E96A00422C90 /* EditProfileViewController.m in Sources */,
 				7EC53E4917FCD2ED00E45959 /* Model.xcdatamodeld in Sources */,
@@ -522,7 +522,7 @@
 				7EB3D3201800B49700702379 /* LoginViewController.m in Sources */,
 				7EDA2CEC1801CD6000422C90 /* RNEncryptor.m in Sources */,
 				7EDA2CF21801CD6000422C90 /* RNOpenSSLEncryptor.m in Sources */,
-				7EDA2D131801FF1300422C90 /* Breadcrum.m in Sources */,
+				7EDA2D131801FF1300422C90 /* Breadcrumb.m in Sources */,
 				7EDA2D0B1801E96A00422C90 /* EditProfileViewController.m in Sources */,
 				7EDA2D031801E3E900422C90 /* AddLocationViewController.m in Sources */,
 				7E5A89F01800BF90008E65D9 /* CreateUserViewController.m in Sources */,

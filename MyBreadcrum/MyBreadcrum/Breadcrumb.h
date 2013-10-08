@@ -11,7 +11,7 @@
 #import "Location.h"
 @class User;
 
-@interface Breadcrum : NSManagedObject
+@interface Breadcrumb : NSManagedObject
 
 @property (nonatomic, retain) NSDate        *date;
 @property (nonatomic, retain) NSString      *notes;

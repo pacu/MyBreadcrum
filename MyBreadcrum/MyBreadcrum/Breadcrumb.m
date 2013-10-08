@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 AppCrafter. All rights reserved.
 //
 
-#import "Breadcrum.h"
+#import "Breadcrumb.h"
 #import "User.h"
 
 
-@implementation Breadcrum
+@implementation Breadcrumb
 
 @dynamic date;
 @dynamic notes;

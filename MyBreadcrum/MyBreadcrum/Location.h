@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Breadcrum;
+@class Breadcrumb;
 
 @interface Location : NSManagedObject
 
@@ -22,8 +22,8 @@
 
 @interface Location (CoreDataGeneratedAccessors)
 
-- (void)addBreadcrumObject:(Breadcrum *)value;
-- (void)removeBreadcrumObject:(Breadcrum *)value;
+- (void)addBreadcrumObject:(Breadcrumb *)value;
+- (void)removeBreadcrumObject:(Breadcrumb *)value;
 - (void)addBreadcrum:(NSSet *)values;
 - (void)removeBreadcrum:(NSSet *)values;
 

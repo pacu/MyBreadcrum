@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="12F37" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Breadcrum" representedClassName="Breadcrum" syncable="YES">
+    <entity name="Breadcrumb" representedClassName="Breadcrumb" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Transformable" valueTransformerName="ACDateEncryptionTransformer" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="Transformable" valueTransformerName="StringEncryptionTransformer" syncable="YES"/>
         <attribute name="thumb" optional="YES" attributeType="Transformable" valueTransformerName="ACImageEncryptionTransformer" storedInTruthFile="YES" syncable="YES"/>
@@ -13,15 +13,15 @@
         <attribute name="latitude" optional="YES" attributeType="Transformable" valueTransformerName="ACNumberEncryptionTransformer" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Transformable" valueTransformerName="ACNumberEncryptionTransformer" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="Transformable" valueTransformerName="StringEncryptionTransformer" syncable="YES"/>
-        <relationship name="breadcrum" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Breadcrum" inverseName="location" inverseEntity="Breadcrum" syncable="YES"/>
+        <relationship name="breadcrum" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Breadcrumb" inverseName="location" inverseEntity="Breadcrumb" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="password" optional="YES" attributeType="Transformable" valueTransformerName="StringEncryptionTransformer" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="Transformable" valueTransformerName="StringEncryptionTransformer" syncable="YES"/>
-        <relationship name="breadcrum" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Breadcrum" inverseName="user" inverseEntity="Breadcrum" syncable="YES"/>
+        <relationship name="breadcrum" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Breadcrumb" inverseName="user" inverseEntity="Breadcrumb" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Breadcrum" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Breadcrumb" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Location" positionX="0" positionY="0" width="0" height="0"/>
         <element name="User" positionX="0" positionY="0" width="0" height="0"/>
     </elements>

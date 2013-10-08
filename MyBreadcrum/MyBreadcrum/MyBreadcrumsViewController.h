@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "User.h"
-@interface MyBreadcrumsViewController : UIViewController
+@interface MyBreadcrumsViewController : UIViewController <UICollectionViewDataSource,UICollectionViewDelegate> {
+    @private
+    BOOL    _showLoading;
+}
 
 
-@property (nonatomic,strong)    IBOutlet UICollectionView *collectionView;
-@property (nonatomic,strong)             User             *user;
+@property (nonatomic,strong)    IBOutlet UICollectionView   *collectionView;
+@property (nonatomic,strong)             User               *user;
+@property (nonatomic,strong)    IBOutlet UIView             *loadingView;
+@property (nonatomic,strong)             NSMutableArray     *breadcrums;
 @end

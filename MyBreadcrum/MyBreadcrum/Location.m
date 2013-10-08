@@ -7,7 +7,7 @@
 //
 
 #import "Location.h"
-#import "Breadcrum.h"
+#import "Breadcrumb.h"
 
 
 @implementation Location
