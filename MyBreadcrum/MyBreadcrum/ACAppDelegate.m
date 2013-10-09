@@ -7,14 +7,18 @@
 //
 
 #import "ACAppDelegate.h"
-
+#import "EditProfileViewController.h"
+#import "LoginViewController.h"
 @implementation ACAppDelegate
 @synthesize persistentStoreCoordinator =_persistentStoreCoordinator;
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deleteUser:) name:UserDeletionNotification object:nil];
     // Override point for customization after application launch.
+    
     return YES;
 }
 							
@@ -45,7 +49,9 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 -(NSString*)encryptionKey{
-    
+    // Discussion: the encryption key should be generated from the user credentials.
+    // when multiple users are registered in one application, different stores must
+    // be used to avoid encryption/decryption errors.
     return @"encryptionKey";
 }
 
@@ -155,5 +161,32 @@
  */
 - (NSURL *)applicationDocumentsDirectory {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+#pragma mark - notifications 
+-(void)deleteUser:(NSNotification*)notification {
+    UINavigationController * nc = (UINavigationController*)self.window.rootViewController;
+    
+    [nc popToRootViewControllerAnimated:YES];
+    
+    NSString * name = [self.currentUser.username copy];
+    
+    [self.managedObjectContext deleteObject:self.currentUser];
+
+    self.currentUser = nil;
+    
+    [[[[UIAlertView alloc]init]initWithTitle:@"User deleted"
+                                     message:[NSString stringWithFormat:@"User %@ deleted successfully",name]
+                                    delegate:nil
+                           cancelButtonTitle:@"OK"
+                           otherButtonTitles: nil] show];
+    
+    
+    // go back to the root controller since the rest of the controllers have references to the current user which won't (and should't) exist after this block
+    LoginViewController *login  = [nc.viewControllers objectAtIndex:0];
+    
+    login.userField.text        = @"";
+    login.passwordField.text    = @"";
+    
 }
 @end

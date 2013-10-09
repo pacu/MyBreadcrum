@@ -7,12 +7,18 @@
 //
 
 #import "EditProfileViewController.h"
-
+#import "User.h"
+#import "ACAppDelegate.h"
 @interface EditProfileViewController ()
 
 @end
 
+#define CANCEL_DELETE   0
+#define CONFIRM_DELETE  1
+
 @implementation EditProfileViewController
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,4 +41,71 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma  mark - actions 
+-(IBAction)save:(id)sender{
+    
+    NSString * message = nil;
+    
+    if ([self isFormValid:&message]){
+        
+        User * user = [APP_DELEGATE currentUser];
+        
+        user.password = self.upcomingPasswordTextField.text;
+        
+        [APP_DELEGATE saveContext];
+        
+    }else {
+        
+        self.errorLabel.hidden  = NO;
+        self.errorLabel.text    =message;
+    }
+}
+-(IBAction)deleteProfile:(id)sender{
+    [[[UIAlertView alloc]initWithTitle:@"Confirm Deletion"
+                               message:@"Are you sure you want to delete your profile?"
+                                        "\n(this can't be undone"
+                              delegate:self
+                     cancelButtonTitle:@"No"
+                     otherButtonTitles:@"Yes, I want to delete it", nil] show];
+}
+-(IBAction)cancel:(id)sender{
+    
+    [self.delegate createUserCancelled];
+    
+}
+
+-(BOOL)isFormValid:(NSString *__autoreleasing *)message{
+    
+    NSMutableString *string = [[NSMutableString alloc]init];
+    
+    // Discussion: this specific validation could be handled in a superclass or
+    // category if its complexity justifies it
+    User *user = [APP_DELEGATE currentUser];
+    
+    if ([self.passwordField.text isEqualToString:user.password]){
+    
+        if ([self.passwordField.text isEqualToString:self.upcomingPasswordTextField.text]){
+            return YES;
+        
+        }
+        [string appendString:@"Passwords do not match"];
+        
+    }else {
+        [string appendString:@"current password is not valid"];
+    }
+    
+    *message = string;
+    return NO;
+}
+
+#pragma mark - 
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if (buttonIndex == CONFIRM_DELETE){
+        
+        [[NSNotificationCenter defaultCenter]postNotificationName:UserDeletionNotification object:self];
+        [self dismissViewControllerAnimated:YES completion:nil];
+        
+    }
+}
 @end

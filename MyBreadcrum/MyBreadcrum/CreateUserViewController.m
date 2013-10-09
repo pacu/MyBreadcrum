@@ -17,7 +17,7 @@
 @interface CreateUserViewController ()
 @property (nonatomic,strong) NSFetchedResultsController *userResults;
 @end
-#define PASSWORD_LENGHT 8
+
 @implementation CreateUserViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -133,7 +133,7 @@
         
     }
     
-    if ([self.passwordField.text length]< PASSWORD_LENGHT){ // password is too short
+    if ([self.passwordField.text length]< MIN_PASSWORD_LENGTH){ // password is too short
         [errorMessage appendString:@"\nPassword is too short use 8 or more chars. "];
         error = YES;
     }else{
