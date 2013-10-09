@@ -10,7 +10,7 @@
 #import <CoreData/CoreData.h>
 #import "User.h"
 
-#define APP_DELEGATE (ACAppDelegate*)([[UIApplication sharedApplication] delegate])
+#define APP_DELEGATE ((ACAppDelegate*)([[UIApplication sharedApplication] delegate]))
 
 @interface ACAppDelegate : UIResponder <UIApplicationDelegate>{
 @private

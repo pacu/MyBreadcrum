@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-@interface AddLocationViewController : UIViewController
+#import "ACBaseFormViewController.h"
+@interface AddLocationViewController : ACBaseFormViewController <MKMapViewDelegate>
 @property (nonatomic,strong)    IBOutlet UITextField    *nameTextField;
 @property (nonatomic,strong)    IBOutlet UITextField    *addressTextField;
 @property (nonatomic,strong)    IBOutlet UISwitch       *locateInMapSwitch;
@@ -16,6 +17,10 @@
 @property (nonatomic,strong)    IBOutlet UILabel        *locateInMapLabel;
 @property (nonatomic,strong)    IBOutlet UILabel        *useCurrentLocationLabel;
 @property (nonatomic,strong)    IBOutlet MKMapView      *mapView;
-
+@property (nonatomic,strong)    IBOutlet UILabel        *errorLabel;
 -(IBAction)save:(id)sender;
+
+
+-(IBAction)useCurrentLocationChanged:(id)sender;
+
 @end

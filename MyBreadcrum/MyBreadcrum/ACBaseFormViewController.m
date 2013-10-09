@@ -20,6 +20,7 @@
     if (self) {
         // Custom initialization
     }
+    self.lastResponderInvokesAction = YES;
     return self;
 }
 
@@ -82,7 +83,7 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     
-    if (textField.tag == [self.textFieldResponderChain count]) {
+    if (textField.tag == [self.textFieldResponderChain count] && self.lastResponderInvokesAction) {
         [textField resignFirstResponder];
         [self actionAfterLastResponder];
         return YES;

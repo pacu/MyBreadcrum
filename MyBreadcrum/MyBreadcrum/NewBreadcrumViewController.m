@@ -7,9 +7,11 @@
 //
 
 #import "NewBreadcrumViewController.h"
-
+#import <CoreData/CoreData.h>
 @interface NewBreadcrumViewController ()
 
+
+@property (nonatomic,strong) NSFetchedResultsController *resultsController;
 @end
 
 @implementation NewBreadcrumViewController
@@ -27,6 +29,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,4 +39,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction)save:(id)sender{
+    
+}
+
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    return [[self.resultsController fetchedObjects]count];
+    
+}
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 1;
+}
 @end

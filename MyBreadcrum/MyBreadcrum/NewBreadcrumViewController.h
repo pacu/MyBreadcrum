@@ -14,7 +14,8 @@
 @property (nonatomic,strong)    IBOutlet UIDatePicker   *datePicker;
 @property (nonatomic,strong)    IBOutlet UIButton       *createLocationButton;
 @property (nonatomic,strong)    IBOutlet UITextView     *notesTextField;
-
+@property (nonatomic,strong)    IBOutlet UIView         *loadingView;
+@property (nonatomic,strong)    IBOutlet UILabel        *noLocationsLabel;
 
 -(IBAction)save:(id)sender;
 @end
