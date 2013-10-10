@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface NewBreadcrumViewController : UIViewController <UIPickerViewDataSource,UIPickerViewDelegate>
+#import "AddLocationViewController.h"
+#import <CoreData/CoreData.h>
+@interface NewBreadcrumViewController : UIViewController    <UIPickerViewDataSource,
+                                                            UIPickerViewDelegate,
+                                                            AddLocationDelegate,
+                                                            NSFetchedResultsControllerDelegate>
 
 @property (nonatomic,strong)    IBOutlet UIPickerView   *locationPicker;
 @property (nonatomic,strong)    IBOutlet UIDatePicker   *datePicker;

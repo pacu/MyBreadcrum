@@ -9,18 +9,31 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "ACBaseFormViewController.h"
+@class Location;
+@protocol AddLocationDelegate;
+
 @interface AddLocationViewController : ACBaseFormViewController <MKMapViewDelegate>
-@property (nonatomic,strong)    IBOutlet UITextField    *nameTextField;
-@property (nonatomic,strong)    IBOutlet UITextField    *addressTextField;
-@property (nonatomic,strong)    IBOutlet UISwitch       *locateInMapSwitch;
-@property (nonatomic,strong)    IBOutlet UISwitch       *useCurrentLocationSwitch;
-@property (nonatomic,strong)    IBOutlet UILabel        *locateInMapLabel;
-@property (nonatomic,strong)    IBOutlet UILabel        *useCurrentLocationLabel;
-@property (nonatomic,strong)    IBOutlet MKMapView      *mapView;
-@property (nonatomic,strong)    IBOutlet UILabel        *errorLabel;
+@property (nonatomic,strong)    IBOutlet UITextField            *nameTextField;
+@property (nonatomic,strong)    IBOutlet UITextField            *addressTextField;
+@property (nonatomic,strong)    IBOutlet UISwitch               *locateInMapSwitch;
+@property (nonatomic,strong)    IBOutlet UISwitch               *useCurrentLocationSwitch;
+@property (nonatomic,strong)    IBOutlet UILabel                *locateInMapLabel;
+@property (nonatomic,strong)    IBOutlet UILabel                *useCurrentLocationLabel;
+@property (nonatomic,strong)    IBOutlet MKMapView              *mapView;
+@property (nonatomic,strong)    IBOutlet UILabel                *errorLabel;
+@property (nonatomic,assign)    id       <AddLocationDelegate>  delegate;
 -(IBAction)save:(id)sender;
 
 
 -(IBAction)useCurrentLocationChanged:(id)sender;
+
+@end
+
+
+@protocol AddLocationDelegate <NSObject>
+
+-(void)locationController:(AddLocationViewController*)controller didAddLocation:(Location*)location;
+-(void)addLocationCancelled:(AddLocationViewController*)controller;
+
 
 @end

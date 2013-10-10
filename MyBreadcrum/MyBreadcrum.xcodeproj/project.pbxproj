@@ -13,6 +13,8 @@
 		7E32D35E17FDF65D001793B4 /* ACArchivableTypeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E32D35C17FDF65D001793B4 /* ACArchivableTypeTransformer.m */; };
 		7E5A89EF1800BF90008E65D9 /* CreateUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A89EE1800BF90008E65D9 /* CreateUserViewController.m */; };
 		7E5A89F01800BF90008E65D9 /* CreateUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A89EE1800BF90008E65D9 /* CreateUserViewController.m */; };
+		7E5F04A418064B6F004BDC1E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5F04A318064B6F004BDC1E /* CoreLocation.framework */; };
+		7E5F04A618064B77004BDC1E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5F04A518064B77004BDC1E /* MapKit.framework */; };
 		7EB3D31F1800B49700702379 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB3D31E1800B49700702379 /* LoginViewController.m */; };
 		7EB3D3201800B49700702379 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB3D31E1800B49700702379 /* LoginViewController.m */; };
 		7EC53E4917FCD2ED00E45959 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7EC53E4717FCD2ED00E45959 /* Model.xcdatamodeld */; };
@@ -94,6 +96,8 @@
 		7E32D35C17FDF65D001793B4 /* ACArchivableTypeTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACArchivableTypeTransformer.m; sourceTree = "<group>"; };
 		7E5A89ED1800BF90008E65D9 /* CreateUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateUserViewController.h; sourceTree = "<group>"; };
 		7E5A89EE1800BF90008E65D9 /* CreateUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateUserViewController.m; sourceTree = "<group>"; };
+		7E5F04A318064B6F004BDC1E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7E5F04A518064B77004BDC1E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7EB3D31D1800B49700702379 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		7EB3D31E1800B49700702379 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		7EC53E4817FCD2ED00E45959 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E5F04A618064B77004BDC1E /* MapKit.framework in Frameworks */,
+				7E5F04A418064B6F004BDC1E /* CoreLocation.framework in Frameworks */,
 				7EC53E5117FD0AD800E45959 /* CoreData.framework in Frameworks */,
 				7ECD2CC417FA2B9B00363D63 /* CoreGraphics.framework in Frameworks */,
 				7ECD2CC617FA2B9B00363D63 /* UIKit.framework in Frameworks */,
@@ -267,6 +273,8 @@
 		7ECD2CC017FA2B9B00363D63 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7E5F04A518064B77004BDC1E /* MapKit.framework */,
+				7E5F04A318064B6F004BDC1E /* CoreLocation.framework */,
 				7EC53E5017FD0AD800E45959 /* CoreData.framework */,
 				7ECD2CC117FA2B9B00363D63 /* Foundation.framework */,
 				7ECD2CC317FA2B9B00363D63 /* CoreGraphics.framework */,
