@@ -15,7 +15,6 @@
 
 @property (nonatomic, retain) NSDate        *date;
 @property (nonatomic, retain) NSString      *notes;
-@property (nonatomic, retain) UIImage       *thumb;
 @property (nonatomic, retain) NSString      *title;
 @property (nonatomic, retain) Location      *location;
 @property (nonatomic, retain) User          *user;

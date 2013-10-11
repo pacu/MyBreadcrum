@@ -17,5 +17,5 @@
 @dynamic longitude;
 @dynamic name;
 @dynamic breadcrum;
-
+@dynamic thumb;
 @end

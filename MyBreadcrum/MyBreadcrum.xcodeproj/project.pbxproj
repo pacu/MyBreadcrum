@@ -15,6 +15,7 @@
 		7E5A89F01800BF90008E65D9 /* CreateUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A89EE1800BF90008E65D9 /* CreateUserViewController.m */; };
 		7E5F04A418064B6F004BDC1E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5F04A318064B6F004BDC1E /* CoreLocation.framework */; };
 		7E5F04A618064B77004BDC1E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5F04A518064B77004BDC1E /* MapKit.framework */; };
+		7EACB3731807AFAA002DB146 /* UIView+MLScreenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EACB3721807AFAA002DB146 /* UIView+MLScreenshot.m */; };
 		7EB3D31F1800B49700702379 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB3D31E1800B49700702379 /* LoginViewController.m */; };
 		7EB3D3201800B49700702379 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB3D31E1800B49700702379 /* LoginViewController.m */; };
 		7EC53E4917FCD2ED00E45959 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7EC53E4717FCD2ED00E45959 /* Model.xcdatamodeld */; };
@@ -98,6 +99,8 @@
 		7E5A89EE1800BF90008E65D9 /* CreateUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateUserViewController.m; sourceTree = "<group>"; };
 		7E5F04A318064B6F004BDC1E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7E5F04A518064B77004BDC1E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		7EACB3711807AFAA002DB146 /* UIView+MLScreenshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MLScreenshot.h"; sourceTree = "<group>"; };
+		7EACB3721807AFAA002DB146 /* UIView+MLScreenshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MLScreenshot.m"; sourceTree = "<group>"; };
 		7EB3D31D1800B49700702379 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		7EB3D31E1800B49700702379 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		7EC53E4817FCD2ED00E45959 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -365,6 +368,8 @@
 		7EDA2D19180254EF00422C90 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				7EACB3711807AFAA002DB146 /* UIView+MLScreenshot.h */,
+				7EACB3721807AFAA002DB146 /* UIView+MLScreenshot.m */,
 			);
 			name = Categories;
 			path = ..;
@@ -474,6 +479,7 @@
 			files = (
 				7EDA2D0E1801FF1200422C90 /* User.m in Sources */,
 				7EDA2D021801E3E900422C90 /* AddLocationViewController.m in Sources */,
+				7EACB3731807AFAA002DB146 /* UIView+MLScreenshot.m in Sources */,
 				7EDA2CED1801CD6000422C90 /* RNOpenSSLCryptor.m in Sources */,
 				7EC53E5C17FD19A400E45959 /* ACDateEncryptionTransformer.m in Sources */,
 				7EDA2CE51801CD6000422C90 /* RNCryptor.m in Sources */,

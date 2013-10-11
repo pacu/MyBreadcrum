@@ -3,7 +3,6 @@
     <entity name="Breadcrumb" representedClassName="Breadcrumb" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Transformable" valueTransformerName="ACDateEncryptionTransformer" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="Transformable" valueTransformerName="StringEncryptionTransformer" syncable="YES"/>
-        <attribute name="thumb" optional="YES" attributeType="Transformable" valueTransformerName="ACImageEncryptionTransformer" storedInTruthFile="YES" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="Transformable" valueTransformerName="StringEncryptionTransformer" syncable="YES"/>
         <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="breadcrum" inverseEntity="Location" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="breadcrum" inverseEntity="User" syncable="YES"/>
@@ -13,6 +12,7 @@
         <attribute name="latitude" optional="YES" attributeType="Transformable" valueTransformerName="ACNumberEncryptionTransformer" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Transformable" valueTransformerName="ACNumberEncryptionTransformer" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="Transformable" valueTransformerName="StringEncryptionTransformer" syncable="YES"/>
+        <attribute name="thumb" optional="YES" attributeType="Transformable" valueTransformerName="ACImageEncryptionTransformer" storedInTruthFile="YES" syncable="YES"/>
         <relationship name="breadcrum" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Breadcrumb" inverseName="location" inverseEntity="Breadcrumb" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES">

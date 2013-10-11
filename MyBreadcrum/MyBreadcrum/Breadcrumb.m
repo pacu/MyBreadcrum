@@ -14,7 +14,6 @@
 
 @dynamic date;
 @dynamic notes;
-@dynamic thumb;
 @dynamic title;
 @dynamic location;
 @dynamic user;

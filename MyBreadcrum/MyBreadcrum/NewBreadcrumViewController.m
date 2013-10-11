@@ -16,6 +16,7 @@
 @property (nonatomic,strong) NSFetchedResultsController *resultsController;
 
 @property (nonatomic,strong) Location                   *selectedLocation;
+
 @end
 
 @implementation NewBreadcrumViewController
@@ -44,7 +45,10 @@
     
     if ([[self.resultsController fetchedObjects]count] == 0){
         self.noLocationsLabel.hidden = NO;
-        
+        self.locationPicker.hidden   = YES;
+    }else {
+        self.noLocationsLabel.hidden = YES;
+        self.locationPicker.hidden   = NO;
     }
 }
 
@@ -62,7 +66,12 @@
 
 
 #pragma mark - PickerView data source
-
+- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component{
+    return pickerView.bounds.size.width;
+}
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component {
+    return 20;
+}
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     return [[self.resultsController fetchedObjects]count];
     
@@ -82,18 +91,39 @@
 }
 #pragma mark - AddLocationDelegate
 
--(void)locationController:(AddLocationViewController*)controller didAddLocation:(Location*)location{
+-(void)locationController:(AddLocationViewController*)controller didAddLocation:(Location*)location {
     [controller dismissViewControllerAnimated:YES completion:nil];
     NSError *error = nil;
     [self.resultsController performFetch:&error];
-    
+    self.locationPicker.hidden = NO;
     [self.locationPicker reloadAllComponents];
+    
 }
 -(void)addLocationCancelled:(AddLocationViewController*)controller{
     [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
-#pragma mark - Fetched results controller
+-(void)locationController:(AddLocationViewController *)controller failedWithError:(NSError *)error {
+    [controller dismissViewControllerAnimated:YES completion:^{
+        [[[UIAlertView alloc]initWithTitle:@"Error" message:error.localizedDescription delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles: nil]show];
+        
+    }];
+}
 
+#pragma mark - Fetched results controller
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+
+    [self.locationPicker reloadAllComponents];
+}
+
+#pragma mark - Segue
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"AddLocation"]){
+        
+        UINavigationController             *nc = segue.destinationViewController;
+        AddLocationViewController *addLocation = [[nc viewControllers]objectAtIndex:0];
+        addLocation.delegate                   = self;
+    }
+}
 
 @end

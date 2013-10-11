@@ -12,7 +12,14 @@
 @class Location;
 @protocol AddLocationDelegate;
 
-@interface AddLocationViewController : ACBaseFormViewController <MKMapViewDelegate>
+@interface AddLocationViewController : ACBaseFormViewController <MKMapViewDelegate, MKAnnotation>
+{
+    @private
+    CLLocationCoordinate2D          _coordinate;
+    UILongPressGestureRecognizer    *_longPress;
+    BOOL                            _isAnnotationUsed;
+}
+
 @property (nonatomic,strong)    IBOutlet UITextField            *nameTextField;
 @property (nonatomic,strong)    IBOutlet UITextField            *addressTextField;
 @property (nonatomic,strong)    IBOutlet UISwitch               *locateInMapSwitch;
@@ -22,9 +29,10 @@
 @property (nonatomic,strong)    IBOutlet MKMapView              *mapView;
 @property (nonatomic,strong)    IBOutlet UILabel                *errorLabel;
 @property (nonatomic,assign)    id       <AddLocationDelegate>  delegate;
+
+
 -(IBAction)save:(id)sender;
-
-
+-(IBAction)cancel:(id)sender;
 -(IBAction)useCurrentLocationChanged:(id)sender;
 
 @end
@@ -34,6 +42,7 @@
 
 -(void)locationController:(AddLocationViewController*)controller didAddLocation:(Location*)location;
 -(void)addLocationCancelled:(AddLocationViewController*)controller;
+-(void)locationController:(AddLocationViewController*)controller failedWithError:(NSError*)error;
 
 
 @end
