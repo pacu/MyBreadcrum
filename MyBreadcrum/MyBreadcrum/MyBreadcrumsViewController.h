@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "User.h"
-@interface MyBreadcrumsViewController : UIViewController <UICollectionViewDataSource,UICollectionViewDelegate> {
+#import "NewBreadcrumViewController.h"
+@interface MyBreadcrumsViewController : UIViewController <UICollectionViewDataSource,UICollectionViewDelegate, NewBreadcrumDelegate> {
     @private
     BOOL    _showLoading;
 }

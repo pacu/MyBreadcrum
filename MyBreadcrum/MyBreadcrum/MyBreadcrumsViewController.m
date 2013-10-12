@@ -12,6 +12,7 @@
 #import "BreadcrumbCell.h"
 #import "Breadcrumb.h"
 #import <QuartzCore/QuartzCore.h>
+#import "NewBreadcrumViewController.h"
 @interface MyBreadcrumsViewController ()
 
 
@@ -129,7 +130,7 @@
     BreadcrumbCell * cell   = [collectionView dequeueReusableCellWithReuseIdentifier:@"BreadcrumCell" forIndexPath:indexPath];
     
     Breadcrumb  * crumb     = [self.breadcrums objectAtIndex:indexPath.row];
-    cell.thumb.image        = crumb.thumb;
+    cell.thumb.image        = crumb.location.thumb;
     cell.title.text         = crumb.title;
     
     
@@ -140,6 +141,40 @@
     
     
     
+    
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    [super prepareForSegue:segue sender:sender];
+    
+    if ([segue.identifier isEqualToString:@"NewBreadcrumb"]) {
+        
+        NewBreadcrumViewController * nextVC = segue.destinationViewController;
+        nextVC.delegate = self;
+        
+    }
+    
+    
+}
+
+#pragma  mark - NewBreadcrumb delegate 
+-(void)newBreadCrumbController:(NewBreadcrumViewController *)controller failedWithError:(NSError *)error{
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    [[[UIAlertView alloc]initWithTitle:@"Error" message:error.localizedDescription delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles: nil]show];
+
+    
+}
+
+-(void) newBreadCrumbControllerCancelled:(NewBreadcrumViewController *)controller {
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
+-(void) newBreadcrumController:(NewBreadcrumViewController *)controller didCreateBreadCrumb:(Breadcrumb *)breadcrumb {
+    
+    
+    [self.navigationController popViewControllerAnimated:YES];
     
     
 }

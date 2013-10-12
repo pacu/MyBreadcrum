@@ -157,6 +157,8 @@
         
         NSAssert(!error, @"Error fetching all users in block");
     }];
+    self.errorLabel.text    =@"";
+    self.errorLabel.hidden  = YES;
     
     
 }

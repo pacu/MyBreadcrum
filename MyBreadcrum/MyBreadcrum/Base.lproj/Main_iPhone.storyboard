@@ -111,7 +111,7 @@
                                     <barButtonItem systemItem="flexibleSpace" id="0DQ-Pk-dkH"/>
                                     <barButtonItem systemItem="add" id="mdO-bH-eGK">
                                         <connections>
-                                            <segue destination="SPK-yf-0ej" kind="push" id="mn3-eY-H93"/>
+                                            <segue destination="SPK-yf-0ej" kind="push" identifier="NewBreadcrumb" id="mn3-eY-H93"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -160,7 +160,7 @@
                         <viewControllerLayoutGuide type="top" id="Gio-7S-XeE"/>
                         <viewControllerLayoutGuide type="bottom" id="qAC-wg-BCI"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="zYT-YE-JWt">
+                    <view key="view" contentMode="scaleToFill" id="zYT-YE-JWt" customClass="UIScrollView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -649,6 +649,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="qQK-E2-KVJ" id="jvV-OD-fIh"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmk-bN-QJ5">
                                 <rect key="frame" x="4" y="234" width="313" height="24"/>
@@ -665,6 +668,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="qQK-E2-KVJ" id="t89-ZM-Hn3"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYw-7u-9na">
                                 <rect key="frame" x="0.0" y="156" width="313" height="24"/>
@@ -681,6 +687,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="qQK-E2-KVJ" id="9Ps-MP-qL9"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Confirm Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPY-1P-5un">
                                 <rect key="frame" x="4" y="324" width="313" height="24"/>

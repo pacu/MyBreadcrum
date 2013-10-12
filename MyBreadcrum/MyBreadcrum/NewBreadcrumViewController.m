@@ -10,12 +10,14 @@
 #import <CoreData/CoreData.h>
 #import "ACAppDelegate.h"
 #import "Location.h"
+#import "Breadcrumb.h"
 @interface NewBreadcrumViewController ()
 
 
 @property (nonatomic,strong) NSFetchedResultsController *resultsController;
 
 @property (nonatomic,strong) Location                   *selectedLocation;
+@property (nonatomic,strong) Breadcrumb                 *breadCrumb;
 
 @end
 
@@ -50,6 +52,9 @@
         self.noLocationsLabel.hidden = YES;
         self.locationPicker.hidden   = NO;
     }
+    
+    self.datePicker.maximumDate = [NSDate date];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,9 +66,54 @@
 }
 
 -(IBAction)save:(id)sender{
+    NSString * message = nil;
+    if ([self isFormValid:&message]){
+        
+        NSEntityDescription * desc = [NSEntityDescription entityForName:@"Breadcrumb" inManagedObjectContext:APP_DELEGATE.managedObjectContext];
+        
+        self.breadCrumb = [[Breadcrumb alloc]initWithEntity:desc
+                             insertIntoManagedObjectContext:APP_DELEGATE.managedObjectContext];
+        
+        self.breadCrumb.date = [self.datePicker date];
+        
+        if ([APP_DELEGATE saveContext]){
+            
+            [self.delegate newBreadcrumController:self
+                              didCreateBreadCrumb:self.breadCrumb];
+            
+        }else {
+            NSError *error = [NSError errorWithDomain:@"biz.appcrafter.mybreadcrumb"
+                                                 code:1 // Discussion: an error message code structure should be defined
+                                             userInfo:[NSDictionary dictionaryWithObject:@"Breadcrumb could not be saved" forKey:NSLocalizedDescriptionKey]];// NSLocalizedString should be used with the appropriate table
+            [self.delegate newBreadCrumbController:self failedWithError:error];
+            
+        }
+    }else {
+        
+    }
+    
+    
     
 }
-
+-(BOOL) isFormValid:(__autoreleasing NSString**)message{
+    NSMutableString * string = [[NSMutableString alloc]init];
+    BOOL              error  = NO;
+    
+    if ([self pickerView:nil numberOfRowsInComponent:0]==0){
+        [string appendString:@"No location available.\n"];
+        error = YES;
+    }
+    if (self.notesTextField.text <= 0){
+        [string appendString:@"No notes available"];
+        error = YES;
+    }
+    
+    if (error)
+        *message = string;
+    
+    return !error;
+    
+}
 
 #pragma mark - PickerView data source
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component{
@@ -95,7 +145,8 @@
     [controller dismissViewControllerAnimated:YES completion:nil];
     NSError *error = nil;
     [self.resultsController performFetch:&error];
-    self.locationPicker.hidden = NO;
+    self.locationPicker.hidden      = NO;
+    self.noLocationsLabel.hidden    = YES;
     [self.locationPicker reloadAllComponents];
     
 }
