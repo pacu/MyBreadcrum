@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E11CDAC1809C8260007B93D /* NewBreadcrumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E11CDAB1809C8260007B93D /* NewBreadcrumViewController.xib */; };
 		7E32D35917FDF455001793B4 /* ACNumberEncryptionTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E32D35817FDF455001793B4 /* ACNumberEncryptionTransformer.m */; };
 		7E32D35A17FDF455001793B4 /* ACNumberEncryptionTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E32D35817FDF455001793B4 /* ACNumberEncryptionTransformer.m */; };
 		7E32D35D17FDF65D001793B4 /* ACArchivableTypeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E32D35C17FDF65D001793B4 /* ACArchivableTypeTransformer.m */; };
@@ -91,6 +92,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E11CDAB1809C8260007B93D /* NewBreadcrumViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewBreadcrumViewController.xib; sourceTree = "<group>"; };
 		7E32D35717FDF455001793B4 /* ACNumberEncryptionTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACNumberEncryptionTransformer.h; sourceTree = "<group>"; };
 		7E32D35817FDF455001793B4 /* ACNumberEncryptionTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACNumberEncryptionTransformer.m; sourceTree = "<group>"; };
 		7E32D35B17FDF65D001793B4 /* ACArchivableTypeTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACArchivableTypeTransformer.h; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				7EDA2D091801E96A00422C90 /* EditProfileViewController.m */,
 				7EDA2D1E1802575B00422C90 /* ACBaseFormViewController.h */,
 				7EDA2D1F1802575B00422C90 /* ACBaseFormViewController.m */,
+				7E11CDAB1809C8260007B93D /* NewBreadcrumViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				7ECD2CD817FA2B9B00363D63 /* Main_iPad.storyboard in Resources */,
 				7ECD2CDD17FA2B9B00363D63 /* Images.xcassets in Resources */,
 				7ECD2CD517FA2B9B00363D63 /* Main_iPhone.storyboard in Resources */,
+				7E11CDAC1809C8260007B93D /* NewBreadcrumViewController.xib in Resources */,
 				7ECD2CCC17FA2B9B00363D63 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

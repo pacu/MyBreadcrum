@@ -37,6 +37,35 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    // Keyboard notifications
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShowNotification:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardDidShowNotification:)
+                                                 name:UIKeyboardDidShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHideNotification:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardDidHideNotification:)
+                                                 name:UIKeyboardDidHideNotification
+                                               object:nil];
+    
+    
+    
+
+    
+    // set content size to the y position of notes text + it's height. We assume that the notes field is the last one on the view.
+
+
     NSFetchRequest * request = [[NSFetchRequest alloc]initWithEntityName:@"Location"];
     NSSortDescriptor *sort = [[NSSortDescriptor alloc]initWithKey:@"name" ascending:YES];
     request.sortDescriptors = [NSArray arrayWithObject:sort];
@@ -54,7 +83,15 @@
     }
     
     self.datePicker.maximumDate = [NSDate date];
+   
     
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+
+}
+-(void)dealloc {
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,6 +113,9 @@
         
         self.breadCrumb.date = [self.datePicker date];
         
+        self.breadCrumb.notes = self.notesTextField.text;
+        self.breadCrumb.title = self.nameTextField.text;
+        self.breadCrumb.location = [self.resultsController.fetchedObjects objectAtIndex:[self.locationPicker selectedRowInComponent:0]];
         if ([APP_DELEGATE saveContext]){
             
             [self.delegate newBreadcrumController:self
@@ -103,8 +143,8 @@
         [string appendString:@"No location available.\n"];
         error = YES;
     }
-    if (self.notesTextField.text <= 0){
-        [string appendString:@"No notes available"];
+    if (self.nameTextField.text.length <= 0){
+        [string appendString:@"Write a name"];
         error = YES;
     }
     
@@ -177,4 +217,67 @@
     }
 }
 
+#pragma mark UITextField delegate 
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    if (self.nameTextField.inputAccessoryView == nil) {
+        
+        self.nameTextField.inputAccessoryView = self.accessoryView;
+    }
+    return YES;
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
+    return YES;
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    [textField resignFirstResponder];
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+#pragma mark - UITextView delegate
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
+    if (self.notesTextField.inputAccessoryView == nil) {
+        
+        self.notesTextField.inputAccessoryView = self.accessoryView;
+    }
+
+    
+    return YES;
+}
+- (BOOL)textViewShouldEndEditing:(UITextView *)textView {
+    
+    return YES;
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    [textView becomeFirstResponder];
+}
+- (void)textViewDidEndEditing:(UITextView *)textView {
+        [textView resignFirstResponder];
+
+}
+
+#pragma mark - Keyboard notifications
+-(void)keyboardWillShowNotification:(NSNotification*)notification {
+    
+
+}
+
+-(void)keyboardDidShowNotification:(NSNotification*)notification {
+    
+}
+-(void)keyboardWillHideNotification:(NSNotification*)notification {
+
+}
+
+-(void)keyboardDidHideNotification:(NSNotification*)notification {
+    
+}
+-(void)done:(id)sender {
+    [self.notesTextField resignFirstResponder];
+    [self.nameTextField resignFirstResponder];
+}
 @end

@@ -8,13 +8,23 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-@interface BreadcrumDetailViewController : UIViewController
+#import "Breadcrumb.h"
+@protocol BreadcrumbDetailDelegate;
+@interface BreadcrumDetailViewController : UIViewController <MKAnnotation, MKMapViewDelegate>
 
 @property (nonatomic,strong)    IBOutlet UILabel    *titleLabel;
 @property (nonatomic,strong)    IBOutlet UILabel    *dateLabel;
 @property (nonatomic,strong)    IBOutlet MKMapView  *mapView;
 @property (nonatomic,strong)    IBOutlet UITextView *textView;
+@property (nonatomic,strong)             Breadcrumb *breadcrumb;
 
 
+@property (nonatomic,weak)      id<BreadcrumbDetailDelegate> delegate;
 -(IBAction)deleteBreadcrum:(id)sender;
+@end
+
+@protocol BreadcrumbDetailDelegate <NSObject>
+
+-(void)breadcrumbDetailController:(BreadcrumDetailViewController*)controller didDelete:(Breadcrumb*)breadcrumb;
+
 @end

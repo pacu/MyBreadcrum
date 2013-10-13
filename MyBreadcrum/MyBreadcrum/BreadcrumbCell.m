@@ -27,5 +27,8 @@
     // Drawing code
 }
 */
-
+-(void)prepareForReuse {
+    self.breadcrumb = nil;
+    
+}
 @end

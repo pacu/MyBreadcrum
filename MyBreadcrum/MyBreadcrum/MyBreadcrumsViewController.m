@@ -13,6 +13,7 @@
 #import "Breadcrumb.h"
 #import <QuartzCore/QuartzCore.h>
 #import "NewBreadcrumViewController.h"
+#import "EditProfileViewController.h"
 @interface MyBreadcrumsViewController ()
 
 
@@ -34,31 +35,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+//    [self.collectionView registerClass:[BreadcrumbCell class] forCellWithReuseIdentifier:@"BreadcrumbCell"];
     self.breadcrums = [NSMutableArray array]; // create an empty array so that collection view does not crash
 	// Do any additional setup after loading the view.
     
-    if ([self.breadcrums count]>0){
+    if ([self.user.breadcrum count]>0){
     // set up operation to do all sorting and heavy stuff
         
     
-        NSBlockOperation * operation = [NSBlockOperation blockOperationWithBlock:^{
-            
-            NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO];
-            NSArray   *sortedArray = [[self.user.breadcrum allObjects] sortedArrayUsingDescriptors:[NSArray arrayWithObject:sort]];
-            
-            self.breadcrums        = [NSMutableArray arrayWithArray:sortedArray];
-            
-        }];
-        
-            // Discussion: a time interval should be tracked so that the animations look good and do not
-            // show or hide to quick that they can't be read or appreciated as a feature and not as a glitch
-        [operation setCompletionBlock:^{
-            [self.collectionView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
-            [self performSelectorOnMainThread:@selector(hideLoadingView) withObject:nil waitUntilDone:YES];
-            
-        }];
-        [operation setQueuePriority:NSOperationQueuePriorityVeryHigh];
-        [[NSOperationQueue currentQueue] addOperation:operation];
+        [self loadBreadcrumbs];
         _showLoading = YES;
         
     
@@ -107,6 +93,7 @@
 }
 -(void)hideLoadingView{
     
+    _showLoading = NO;
     self.loadingView.transform = CGAffineTransformIdentity;
     [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         self.loadingView.transform = CGAffineTransformMakeScale(0.01, 0.01);
@@ -127,11 +114,12 @@
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    BreadcrumbCell * cell   = [collectionView dequeueReusableCellWithReuseIdentifier:@"BreadcrumCell" forIndexPath:indexPath];
+    BreadcrumbCell * cell   = [collectionView dequeueReusableCellWithReuseIdentifier:@"BreadcrumbCell" forIndexPath:indexPath];
     
     Breadcrumb  * crumb     = [self.breadcrums objectAtIndex:indexPath.row];
     cell.thumb.image        = crumb.location.thumb;
     cell.title.text         = crumb.title;
+    cell.breadcrumb         = crumb;
     
     
     return cell;
@@ -140,19 +128,27 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
     
-    
-    
-    
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    [super prepareForSegue:segue sender:sender];
-    
+
+    BreadcrumbCell *cell = (BreadcrumbCell*)sender;
     if ([segue.identifier isEqualToString:@"NewBreadcrumb"]) {
         
         NewBreadcrumViewController * nextVC = segue.destinationViewController;
         nextVC.delegate = self;
         
+    }else if ([segue.identifier isEqualToString:@"EditProfile"]){
+        UINavigationController          *nc = segue.destinationViewController ;
+        EditProfileViewController * editVC  = [[nc viewControllers]objectAtIndex:0];
+        editVC.editDelegate                     = self;
+    }else if ([segue.identifier isEqualToString:@"BreadcrumDetail"]){
+        
+
+        BreadcrumDetailViewController *detailVC = segue.destinationViewController;
+        detailVC.delegate                       = self;
+        detailVC.breadcrumb                     = cell.breadcrumb;
+
     }
     
     
@@ -173,10 +169,63 @@
 }
 -(void) newBreadcrumController:(NewBreadcrumViewController *)controller didCreateBreadCrumb:(Breadcrumb *)breadcrumb {
     
-    
+    [self.user addBreadcrumObject:breadcrumb];
     [self.navigationController popViewControllerAnimated:YES];
-    
+
+    [APP_DELEGATE saveContext];
+        [self loadBreadcrumbs];
     
 }
 
+#pragma mark - Edit view controller delegate 
+-(void)editViewController:(EditProfileViewController*)controller didEditProfile:(User*)user {
+    self.user = user;
+    [controller dismissViewControllerAnimated:YES completion:nil];
+}
+-(void)editViewControllerCancelled:(EditProfileViewController *)controller {
+    [controller dismissViewControllerAnimated:YES completion:nil];    
+}
+-(void)editViewController:(EditProfileViewController *)controller failedWithError:(NSError *)error{
+    [controller dismissViewControllerAnimated:YES completion:^{
+        [[[UIAlertView alloc]initWithTitle:@"Error" message:error.localizedDescription delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles: nil]show];
+    }];
+}
+
+
+#pragma mark - actions
+-(void)loadBreadcrumbs {
+    
+        [self showLoadingView];
+    
+    NSBlockOperation * operation = [NSBlockOperation blockOperationWithBlock:^{
+        
+        NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO];
+        NSArray   *sortedArray = [[self.user.breadcrum allObjects] sortedArrayUsingDescriptors:[NSArray arrayWithObject:sort]];
+        
+        self.breadcrums        = [NSMutableArray arrayWithArray:sortedArray];
+        
+    }];
+    
+    // Discussion: a time interval should be tracked so that the animations look good and do not
+    // show or hide to quick that they can't be read or appreciated as a feature and not as a glitch
+    [operation setCompletionBlock:^{
+        [self.collectionView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
+        [self performSelectorOnMainThread:@selector(hideLoadingView) withObject:nil waitUntilDone:YES];
+        
+    }];
+    [operation setQueuePriority:NSOperationQueuePriorityVeryHigh];
+    [[NSOperationQueue currentQueue] addOperation:operation];
+
+}
+
+#pragma  mark - breadcrumb detail delegate
+-(void)breadcrumbDetailController:(BreadcrumDetailViewController *)controller didDelete:(Breadcrumb *)breadcrumb {
+    [self.navigationController popViewControllerAnimated:YES];
+    [self.user removeBreadcrumObject:breadcrumb];
+    [self loadBreadcrumbs];
+    [APP_DELEGATE.managedObjectContext deleteObject:breadcrumb];
+    [APP_DELEGATE saveContext];
+    
+    
+}
 @end

@@ -9,10 +9,18 @@
 #import <UIKit/UIKit.h>
 #import "User.h"
 #import "NewBreadcrumViewController.h"
-@interface MyBreadcrumsViewController : UIViewController <UICollectionViewDataSource,UICollectionViewDelegate, NewBreadcrumDelegate> {
+#import "EditProfileViewController.h"
+#import "BreadcrumDetailViewController.h"
+@interface MyBreadcrumsViewController : UIViewController   <UICollectionViewDataSource,
+                                                            UICollectionViewDelegate,
+                                                            NewBreadcrumDelegate,
+                                                            BreadcrumbDetailDelegate,
+                                                            EditViewControllerDelegate> {
     @private
-    BOOL    _showLoading;
+   BOOL         _showLoading;                                                                
+
 }
+
 
 
 @property (nonatomic,strong)    IBOutlet UICollectionView   *collectionView;

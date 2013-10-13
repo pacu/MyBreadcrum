@@ -20,18 +20,19 @@
     if (self) {
         // Custom initialization
     }
-    self.lastResponderInvokesAction = YES;
+;
     return self;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.lastResponderInvokesAction = YES;
 	// Do any additional setup after loading the view.
     
     NSIndexSet *unsortedTextfieldsIndexes = [[self.view subviews] indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
         
-            BOOL isTextField = [obj isKindOfClass:[UITextField class]];
+            BOOL isTextField = [obj isKindOfClass:[UITextField class]] || [obj isKindOfClass:[UITextView class]];
             
             if (isTextField && [obj tag]==0)
                 @throw [NSException exceptionWithName:@"UntaggedTextFieldException"
@@ -49,9 +50,16 @@
     
     self.textFieldResponderChain = [[[self.view subviews]objectsAtIndexes:unsortedTextfieldsIndexes] sortedArrayUsingDescriptors:sortDescriptors];
     
-    [self registerForKeyboardNotifications];
-}
 
+}
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+        [self registerForKeyboardNotifications];
+}
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

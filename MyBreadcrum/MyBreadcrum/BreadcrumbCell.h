@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Breadcrumb.h"
 @interface BreadcrumbCell : UICollectionViewCell
 @property (nonatomic,strong)    IBOutlet UIImageView    *thumb;
 @property (nonatomic,strong)    IBOutlet UILabel        *title;
-
+@property (nonatomic,weak)               Breadcrumb     *breadcrumb;
 
 
 @end

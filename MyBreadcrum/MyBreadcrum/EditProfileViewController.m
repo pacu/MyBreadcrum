@@ -52,7 +52,15 @@
         
         user.password = self.upcomingPasswordTextField.text;
         
-        [APP_DELEGATE saveContext];
+        if ([APP_DELEGATE saveContext]) {
+            [self.editDelegate editViewController:self didEditProfile:user];
+        }else {
+             NSError * error = [NSError errorWithDomain:@"biz.appcrafter.mybreadcrum.profile"
+                                                  code:1
+                                              userInfo:[NSDictionary dictionaryWithObject:@"Profile not changed"
+                                                                                   forKey:NSLocalizedDescriptionKey]];
+            [self.editDelegate editViewController:self failedWithError:error];
+        }
         
     }else {
         
@@ -70,7 +78,7 @@
 }
 -(IBAction)cancel:(id)sender{
     
-    [self.delegate createUserCancelled];
+    [self.editDelegate editViewControllerCancelled:self];
     
 }
 
